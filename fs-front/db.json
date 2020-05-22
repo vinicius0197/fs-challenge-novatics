@@ -1,0 +1,15 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Carlos"
+    }
+  ],
+  "kudos": [
+    {
+      "id": 1,
+      "description": "Mandou muito bem no projeto",
+      "userId": 1
+    }
+  ]
+}
