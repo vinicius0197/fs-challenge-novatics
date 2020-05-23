@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  def index
+    @users = User.select(:id, :username, :avatar)
+    render json: { users: @users }
+  end
+
   def create
     user = User.create(user_params)
     if user.valid?

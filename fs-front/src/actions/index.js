@@ -1,5 +1,5 @@
 import api from "../apis";
-import { SEND_KUDO, SIGNUP, LOGIN, AUTH, NOT_AUTH } from "./types";
+import { SEND_KUDO, SIGNUP, LOGIN, AUTH, NOT_AUTH, GET_USERS } from "./types";
 
 export const sendKudo = (formValues) => async (dispatch) => {
   const response = await api.post("/kudos", formValues);
@@ -31,4 +31,9 @@ export const isAuth = (token) => async (dispatch) => {
   } else {
     dispatch({ type: NOT_AUTH, payload: response.data });
   }
+};
+
+export const getUsers = () => async (dispatch) => {
+  const response = await api.get("/users");
+  dispatch({ type: GET_USERS, payload: response.data });
 };

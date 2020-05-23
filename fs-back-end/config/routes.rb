@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resource :users, only: [:create]
+  resources :users
   resource :kudos, only: [:create]
   post "/login", to: "auth#login"
   get "/auto_login", to: "auth#auto_login"

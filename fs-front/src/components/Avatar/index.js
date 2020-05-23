@@ -26,7 +26,7 @@ const Avatar = (props) => {
       <img
         className={selected ? "avatar-selected" : "avatar"}
         key={props.user.id}
-        src="https://s3.amazonaws.com/uifaces/faces/twitter/suribbles/128.jpg"
+        src={props.user.avatar}
         alt={props.user.userName}
       />
       <div className={selected ? "middle_selected" : "middle"}>

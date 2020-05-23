@@ -1,7 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+User.create(username: 'marcos', password: 'password123', avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/suribbles/128.jpg")
+User.create(username: 'joao', password: 'password123', avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/suribbles/128.jpg")
+User.create(username: 'camila', password: 'password123', avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/suribbles/128.jpg")
+User.create(username: 'afonso', password: 'password123', avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/suribbles/128.jpg")
+User.create(username: 'mateus', password: 'password123', avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/suribbles/128.jpg")
+User.create(username: 'junior', password: 'password123', avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/suribbles/128.jpg")
+User.create(username: 'leila', password: 'password123', avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/suribbles/128.jpg")
+User.create(username: 'carlos', password: 'password123', avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/suribbles/128.jpg")
