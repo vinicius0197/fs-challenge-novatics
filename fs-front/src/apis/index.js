@@ -1,5 +1,5 @@
-import axios from 'axios';
+import axios from "axios";
 
 export default axios.create({
-  baseURL: 'localhost' // add API url here
+  baseURL: "http://localhost:3000", // add API url here
 });

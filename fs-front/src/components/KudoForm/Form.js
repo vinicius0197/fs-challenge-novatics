@@ -18,7 +18,7 @@ const Form = (props) => {
   };
 
   const redirect = () => {
-    history.push("/home");
+    history.push("/app");
   };
 
   return (
