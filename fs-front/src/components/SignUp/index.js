@@ -10,7 +10,12 @@ const SignUp = (props) => {
     props.signup({ ...formValues });
   };
 
-  return <SignUpForm onSubmit={onSubmit} />;
+  return (
+    <div>
+      <h1>Cadastro</h1>
+      <SignUpForm onSubmit={onSubmit} />
+    </div>
+  );
 };
 
 export default connect(null, { signup })(SignUp);

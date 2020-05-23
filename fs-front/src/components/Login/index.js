@@ -1,7 +1,21 @@
 import React from "react";
+import { connect } from "react-redux";
 
-const Login = () => {
-  return <div>Login</div>;
+import LoginForm from "./LoginForm";
+
+import { login } from "../../actions";
+
+const Login = (props) => {
+  const onSubmit = (formValues) => {
+    props.login({ ...formValues });
+  };
+
+  return (
+    <div>
+      <h1>Login</h1>
+      <LoginForm onSubmit={onSubmit} />
+    </div>
+  );
 };
 
-export default Login;
+export default connect(null, { login })(Login);
