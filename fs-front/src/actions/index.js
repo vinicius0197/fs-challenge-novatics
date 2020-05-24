@@ -1,9 +1,21 @@
 import api from "../apis";
-import { SEND_KUDO, SIGNUP, LOGIN, AUTH, NOT_AUTH, GET_USERS } from "./types";
+import {
+  SEND_KUDO,
+  SIGNUP,
+  LOGIN,
+  AUTH,
+  NOT_AUTH,
+  GET_USERS,
+  NOT_ENOUGH_KUDOS,
+} from "./types";
 
 export const sendKudo = (formValues) => async (dispatch) => {
   const response = await api.post("/kudos", { kudo: formValues });
-  dispatch({ type: SEND_KUDO, payload: response.data });
+  if (response.data.success) {
+    dispatch({ type: SEND_KUDO, payload: response.data });
+  } else {
+    dispatch({ type: NOT_ENOUGH_KUDOS, payload: response.data });
+  }
 };
 
 export const signup = (formValues) => async (dispatch) => {
@@ -16,7 +28,6 @@ export const signup = (formValues) => async (dispatch) => {
 export const login = (formValues) => async (dispatch) => {
   const user = { user: formValues };
   const response = await api.post("/login", user);
-  console.log(response);
   localStorage.setItem("token", response.data.jwt);
   dispatch({ type: LOGIN, payload: response.data });
 };

@@ -88,7 +88,7 @@ const Avatar = (props) => {
             kudoData: {
               senderId: props.currentUser,
               recipientId: props.user.id,
-              kudoType: "clap",
+              kudoType: "awesome",
             },
           }}
         >

@@ -43,6 +43,14 @@ const SignUpForm = (props) => {
         label="Senha"
       />
 
+      <Field
+        name="avatar"
+        dataTestid="avatar"
+        type="text"
+        component={renderInput}
+        label="Link para um avatar"
+      />
+
       <button data-testid="finishButton">Cadastrar</button>
     </form>
   );
