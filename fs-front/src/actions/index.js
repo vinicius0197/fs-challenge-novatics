@@ -7,6 +7,7 @@ import {
   NOT_AUTH,
   GET_USERS,
   NOT_ENOUGH_KUDOS,
+  GET_REMAINING_KUDOS,
 } from "./types";
 
 export const sendKudo = (formValues) => async (dispatch) => {
@@ -16,6 +17,15 @@ export const sendKudo = (formValues) => async (dispatch) => {
   } else {
     dispatch({ type: NOT_ENOUGH_KUDOS, payload: response.data });
   }
+};
+
+export const getRemainingKudos = () => async (dispatch) => {
+  const token = localStorage.getItem("token");
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
+  const response = await api.get("/kudos", config);
+  dispatch({ type: GET_REMAINING_KUDOS, payload: response.data });
 };
 
 export const signup = (formValues) => async (dispatch) => {

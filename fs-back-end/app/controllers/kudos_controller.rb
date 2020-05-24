@@ -1,4 +1,10 @@
 class KudosController < ApplicationController
+  def index
+    user = session_user
+    kudos = User.where(["id = ?", user[:id]]).select("id", "awesome_kudo", "grateful_kudo", "learned_kudo").first
+    render json: { success: 'Fetched kudos', kudos: kudos }
+  end
+
   def create
     if has_kudos(kudo_params[:sender_id], kudo_params[:kudo_type])
       kudo = Kudo.create(kudo_params)

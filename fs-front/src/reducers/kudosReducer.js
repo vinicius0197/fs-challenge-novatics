@@ -1,4 +1,8 @@
-import { SEND_KUDO, NOT_ENOUGH_KUDOS } from "../actions/types";
+import {
+  SEND_KUDO,
+  NOT_ENOUGH_KUDOS,
+  GET_REMAINING_KUDOS,
+} from "../actions/types";
 
 const initialState = {
   grateful_kudos: 0,
@@ -8,6 +12,13 @@ const initialState = {
 
 export default function (state = initialState, action) {
   switch (action.type) {
+    case GET_REMAINING_KUDOS:
+      return {
+        ...state,
+        grateful_kudos: action.payload.kudos.grateful_kudo,
+        awesome_kudos: action.payload.kudos.awesome_kudo,
+        learned_kudos: action.payload.kudos.learned_kudo,
+      };
     case SEND_KUDO:
       return {
         ...state,

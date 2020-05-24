@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { Route } from "react-router-dom";
 
-import { getUsers } from "../../actions";
+import { getUsers, getRemainingKudos } from "../../actions";
 import Avatar from "../Avatar/";
 import KudoForm from "../KudoForm";
 import "./index.css";
@@ -10,6 +10,7 @@ import "./index.css";
 const ParticipantsGrid = (props) => {
   useEffect(() => {
     props.getUsers();
+    props.getRemainingKudos();
   }, []);
 
   const createGrid = () => {
@@ -40,4 +41,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { getUsers })(ParticipantsGrid);
+export default connect(mapStateToProps, { getUsers, getRemainingKudos })(
+  ParticipantsGrid
+);
