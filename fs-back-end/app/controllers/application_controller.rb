@@ -32,7 +32,7 @@ class ApplicationController < ActionController::API
     token = auth_header.split(' ')[1]
     begin
       JWT.decode(token, 'my_secret', true, algorithm: 'HS256')
-      render json: { message: "Authorized" }
+      render json: { message: "Authorized", user: session_user[:id] }
     rescue ActiveRecord::RecordNotFound => e
       render json: { errors: e.message }, status: :unauthorized
     rescue JWT::DecodeError => e
