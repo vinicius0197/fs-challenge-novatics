@@ -7,6 +7,7 @@ const renderInput = (formProps) => {
     <div style={{ display: "flex", flexDirection: "column" }}>
       <label> {formProps.label} </label>
       <textarea
+        placeholder="Porquê você está mandando um kudos?"
         style={{ resize: "none" }}
         data-testid={formProps.dataTestid}
         {...formProps.input}
