@@ -22,14 +22,18 @@ export const login = (formValues) => async (dispatch) => {
 };
 
 export const isAuth = (token) => async (dispatch) => {
-  const config = {
-    headers: { Authorization: `Bearer ${token}` },
-  };
-  const response = await api.get("/user_is_authed", config);
-  if (response.status === 200) {
-    dispatch({ type: AUTH, payload: response.data });
+  if (token === null) {
+    dispatch({ type: NOT_AUTH, payload: null });
   } else {
-    dispatch({ type: NOT_AUTH, payload: response.data });
+    const config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
+    const response = await api.get("/user_is_authed", config);
+    if (response.status === 200) {
+      dispatch({ type: AUTH, payload: response.data });
+    } else {
+      dispatch({ type: NOT_AUTH, payload: response.data });
+    }
   }
 };
 
