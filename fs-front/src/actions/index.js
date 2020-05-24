@@ -2,7 +2,7 @@ import api from "../apis";
 import { SEND_KUDO, SIGNUP, LOGIN, AUTH, NOT_AUTH, GET_USERS } from "./types";
 
 export const sendKudo = (formValues) => async (dispatch) => {
-  const response = await api.post("/kudos", formValues);
+  const response = await api.post("/kudos", { kudo: formValues });
   dispatch({ type: SEND_KUDO, payload: response.data });
 };
 

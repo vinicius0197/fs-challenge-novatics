@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_24_122105) do
+ActiveRecord::Schema.define(version: 2020_05_24_140056) do
 
   create_table "kudos", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_05_24_122105) do
     t.string "description"
     t.integer "sender_id"
     t.integer "recipient_id"
+    t.string "kudo_type"
   end
 
   create_table "users", force: :cascade do |t|

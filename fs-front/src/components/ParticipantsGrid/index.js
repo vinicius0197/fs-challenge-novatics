@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import { Route } from "react-router-dom";
 
 import { getUsers } from "../../actions";
 
 import Avatar from "../Avatar/";
 
 import "./index.css";
+import KudoForm from "../KudoForm";
 
 const ParticipantsGrid = (props) => {
   useEffect(() => {
@@ -26,6 +28,7 @@ const ParticipantsGrid = (props) => {
     <div className="container">
       <h1>Dê um kudo!</h1>
       {createGrid()}
+      <Route path="/app/send_kudo" exact component={KudoForm} />
     </div>
   );
 };

@@ -11,6 +11,6 @@ class KudosController < ApplicationController
 
   private
   def kudo_params
-    params.require(:kudo).permit(:description, :sender_id, :recipient_id)
+    params.require(:kudo).permit(:description, :sender_id, :recipient_id, :kudo_type)
   end
 end

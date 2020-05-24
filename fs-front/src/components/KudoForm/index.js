@@ -8,8 +8,13 @@ import { sendKudo } from "../../actions";
 
 const KudoForm = (props) => {
   const onSubmit = (formValues) => {
-    // TODO: get ID from sending and receiving user and add it to formValues here
-    props.sendKudo({ ...formValues });
+    const { senderId, recipientId, kudoType } = props.location.kudoData;
+    props.sendKudo({
+      description: formValues.kudoDescription,
+      sender_id: senderId,
+      recipient_id: recipientId,
+      kudo_type: kudoType,
+    });
   };
 
   return (

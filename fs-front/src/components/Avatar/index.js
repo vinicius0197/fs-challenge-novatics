@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Faker from "faker";
+
+import { Link } from "react-router-dom";
 
 import { ReactComponent as LearnIcon } from "../../assets/closed-book.svg";
 import { ReactComponent as ClapIcon } from "../../assets/clap.svg";
@@ -9,14 +10,10 @@ import "./index.css";
 
 const Avatar = (props) => {
   const [selected, setSelected] = useState(false);
-  const getAvatar = () => {
-    return Faker.image.avatar();
-  };
 
   const updateKudos = (userId, kudoType) => {
-    // TODO: send action with userId and kudoType
+    alert(userId + kudoType);
   };
-
   return (
     <div
       className="avatar_container"
@@ -30,18 +27,32 @@ const Avatar = (props) => {
         alt={props.user.userName}
       />
       <div className={selected ? "middle_selected" : "middle"}>
-        <LearnIcon
-          className="icon"
-          onClick={() => updateKudos(props.user.id, "learn")}
-        />
-        <ClapIcon
-          className="icon"
-          onClick={() => updateKudos(props.user.id, "clap")}
-        />
-        <GratefulIcon
-          className="icon"
-          onClick={() => updateKudos(props.user.id, "grateful")}
-        />
+        <Link
+          to={{
+            pathname: "app/send_kudo",
+            kudoData: {
+              senderId: 1,
+              recipientId: 2,
+              kudoType: "learn",
+            },
+          }}
+        >
+          <LearnIcon className="icon" />
+        </Link>
+
+        <Link to={"app/send_kudo"}>
+          <GratefulIcon
+            className="icon"
+            // onClick={() => updateKudos(props.user.id, "grateful")}
+          />
+        </Link>
+
+        <Link to={"app/send_kudo"}>
+          <ClapIcon
+            className="icon"
+            // onClick={() => updateKudos(props.user.id, "clap")}
+          />
+        </Link>
       </div>
     </div>
   );
