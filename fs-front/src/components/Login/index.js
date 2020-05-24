@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import LoginForm from "./LoginForm";
 
@@ -11,9 +12,10 @@ const Login = (props) => {
   };
 
   return (
-    <div>
+    <div className="form">
       <h1>Login</h1>
       <LoginForm onSubmit={onSubmit} />
+      <Link to="/signup">Signup</Link>
     </div>
   );
 };

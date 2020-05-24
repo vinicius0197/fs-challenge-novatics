@@ -1,0 +1,10 @@
+.timeline-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #bbc6d1;
+  padding: 0.8rem;
+  margin: 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}

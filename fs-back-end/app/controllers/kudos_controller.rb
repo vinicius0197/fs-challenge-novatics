@@ -1,8 +1,7 @@
 class KudosController < ApplicationController
   def index
-    user = session_user
-    kudos = User.where(["id = ?", user[:id]]).select("id", "awesome_kudo", "grateful_kudo", "learned_kudo").first
-    render json: { success: 'Fetched kudos', kudos: kudos }
+    kudos = Kudo.all
+    render json: { kudos: kudos }
   end
 
   def create
@@ -19,6 +18,12 @@ class KudosController < ApplicationController
     else
       render json: { errors: "You don't gave enough kudos" }
     end
+  end
+
+  def remaining_kudos
+    user = session_user
+    kudos = User.where(["id = ?", user[:id]]).select("id", "awesome_kudo", "grateful_kudo", "learned_kudo").first
+    render json: { success: 'Fetched kudos', kudos: kudos }
   end
 
 

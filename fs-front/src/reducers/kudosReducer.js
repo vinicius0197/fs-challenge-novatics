@@ -2,12 +2,14 @@ import {
   SEND_KUDO,
   NOT_ENOUGH_KUDOS,
   GET_REMAINING_KUDOS,
+  GET_KUDOS,
 } from "../actions/types";
 
 const initialState = {
   grateful_kudos: 0,
   awesome_kudos: 0,
   learned_kudos: 0,
+  kudos: [],
 };
 
 export default function (state = initialState, action) {
@@ -29,6 +31,11 @@ export default function (state = initialState, action) {
     case NOT_ENOUGH_KUDOS:
       alert("Not enough kudos");
       return { ...state };
+    case GET_KUDOS:
+      return {
+        ...state,
+        kudos: action.payload.kudos,
+      };
     default:
       return state;
   }

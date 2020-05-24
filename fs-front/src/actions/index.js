@@ -1,13 +1,16 @@
 import api from "../apis";
+
+import history from "../history";
+
 import {
   SEND_KUDO,
   SIGNUP,
-  LOGIN,
   AUTH,
   NOT_AUTH,
   GET_USERS,
   NOT_ENOUGH_KUDOS,
   GET_REMAINING_KUDOS,
+  GET_KUDOS,
 } from "./types";
 
 export const sendKudo = (formValues) => async (dispatch) => {
@@ -24,8 +27,17 @@ export const getRemainingKudos = () => async (dispatch) => {
   const config = {
     headers: { Authorization: `Bearer ${token}` },
   };
-  const response = await api.get("/kudos", config);
+  const response = await api.get("/remaining_kudos", config);
   dispatch({ type: GET_REMAINING_KUDOS, payload: response.data });
+};
+
+export const getKudos = () => async (dispatch) => {
+  const token = localStorage.getItem("token");
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
+  const response = await api.get("/kudos", config);
+  dispatch({ type: GET_KUDOS, payload: response.data });
 };
 
 export const signup = (formValues) => async (dispatch) => {
@@ -38,8 +50,13 @@ export const signup = (formValues) => async (dispatch) => {
 export const login = (formValues) => async (dispatch) => {
   const user = { user: formValues };
   const response = await api.post("/login", user);
-  localStorage.setItem("token", response.data.jwt);
-  dispatch({ type: LOGIN, payload: response.data });
+  if (response.data.success) {
+    localStorage.setItem("token", response.data.jwt);
+    dispatch({ type: AUTH, payload: response.data });
+    history.push("/app/board");
+  } else {
+    dispatch({ type: NOT_AUTH, payload: response.data });
+  }
 };
 
 export const isAuth = (token) => async (dispatch) => {

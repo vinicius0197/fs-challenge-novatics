@@ -23,7 +23,7 @@ const Form = (props) => {
   };
 
   const redirect = () => {
-    history.push("/app");
+    history.push("/app/board");
   };
 
   return (

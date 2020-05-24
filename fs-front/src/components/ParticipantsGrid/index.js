@@ -33,7 +33,7 @@ const ParticipantsGrid = (props) => {
     <div className="container">
       <h1 className="title">Dê um kudo!</h1>
       {createGrid()}
-      <Route path="/app/send_kudo" exact component={KudoForm} />
+      <Route path="/app/board/send_kudo" exact component={KudoForm} />
     </div>
   );
 };

@@ -4,9 +4,10 @@ import history from "../../history";
 
 const renderInput = (formProps) => {
   return (
-    <div>
+    <div className="form-tab">
       <label> {formProps.label} </label>
       <input
+        className="form-field"
         type={formProps.type}
         data-testid={formProps.dataTestid}
         {...formProps.input}
@@ -22,7 +23,7 @@ const SignUpForm = (props) => {
   };
 
   const redirect = () => {
-    history.push("/app");
+    history.push("/app/board");
   };
 
   return (
@@ -51,7 +52,9 @@ const SignUpForm = (props) => {
         label="Link para um avatar"
       />
 
-      <button data-testid="finishButton">Cadastrar</button>
+      <button className="button" data-testid="finishButton">
+        Cadastrar
+      </button>
     </form>
   );
 };

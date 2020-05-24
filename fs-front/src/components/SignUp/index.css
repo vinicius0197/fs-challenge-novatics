@@ -1,0 +1,16 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-tab {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field {
+  border: 1px solid #bbc6d1;
+  border-radius: 5px;
+  height: 1.5rem;
+}

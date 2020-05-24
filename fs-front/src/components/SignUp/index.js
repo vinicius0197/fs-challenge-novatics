@@ -1,9 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import SignUpForm from "./SignUpForm";
 
 import { signup } from "../../actions";
+
+import "./index.css";
 
 const SignUp = (props) => {
   const onSubmit = (formValues) => {
@@ -11,9 +14,11 @@ const SignUp = (props) => {
   };
 
   return (
-    <div>
+    <div className="form">
       <h1>Cadastro</h1>
       <SignUpForm onSubmit={onSubmit} />
+
+      <Link to="/login">Login</Link>
     </div>
   );
 };

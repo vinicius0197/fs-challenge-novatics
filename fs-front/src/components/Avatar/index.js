@@ -56,7 +56,7 @@ const Avatar = (props) => {
         >
           <Link
             to={{
-              pathname: "app/send_kudo",
+              pathname: "/app/board/send_kudo",
               kudoData: {
                 senderId: props.currentUser,
                 recipientId: props.user.id,
@@ -72,7 +72,7 @@ const Avatar = (props) => {
 
           <Link
             to={{
-              pathname: "app/send_kudo",
+              pathname: "/app/board/send_kudo",
               kudoData: {
                 senderId: props.currentUser,
                 recipientId: props.user.id,
@@ -88,7 +88,7 @@ const Avatar = (props) => {
 
           <Link
             to={{
-              pathname: "app/send_kudo",
+              pathname: "/app/board/send_kudo",
               kudoData: {
                 senderId: props.currentUser,
                 recipientId: props.user.id,
