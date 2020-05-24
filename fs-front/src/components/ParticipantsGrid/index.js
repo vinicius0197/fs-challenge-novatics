@@ -2,24 +2,29 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { Route } from "react-router-dom";
 
-import { getUsers } from "../../actions";
+import { getUsers, getRemainingKudos } from "../../actions";
 import Avatar from "../Avatar/";
 import KudoForm from "../KudoForm";
+import KudosBoard from "../KudosBoard";
 import "./index.css";
 
 const ParticipantsGrid = (props) => {
   useEffect(() => {
     props.getUsers();
+    props.getRemainingKudos();
   }, []);
 
   const createGrid = () => {
     return (
-      <div className="participants_container">
-        {props.users.map((user) => {
-          if (props.currentUser != user.id) {
-            return <Avatar user={user} />;
-          }
-        })}
+      <div>
+        <KudosBoard />
+        <div className="participants_container">
+          {props.users.map((user) => {
+            if (props.currentUser != user.id) {
+              return <Avatar user={user} />;
+            }
+          })}
+        </div>
       </div>
     );
   };
@@ -40,4 +45,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { getUsers })(ParticipantsGrid);
+export default connect(mapStateToProps, { getUsers, getRemainingKudos })(
+  ParticipantsGrid
+);

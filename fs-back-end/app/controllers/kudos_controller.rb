@@ -1,4 +1,10 @@
 class KudosController < ApplicationController
+  def index
+    user = session_user
+    kudos = User.where(["id = ?", user[:id]]).select("id", "awesome_kudo", "grateful_kudo", "learned_kudo").first
+    render json: { success: 'Fetched kudos', kudos: kudos }
+  end
+
   def create
     if has_kudos(kudo_params[:sender_id], kudo_params[:kudo_type])
       kudo = Kudo.create(kudo_params)
@@ -46,9 +52,9 @@ class KudosController < ApplicationController
     when "learn"
       user.update_column(:learned_kudo, user.learned_kudo += -1)
     when "grateful"
-      user.update_column(:grateful_kudo, user.learned_kudo += -1)
+      user.update_column(:grateful_kudo, user.grateful_kudo += -1)
     when "awesome"
-      user.update_column(:awesome_kudo, user.learned_kudo += -1)
+      user.update_column(:awesome_kudo, user.awesome_kudo += -1)
     end
   end
 end

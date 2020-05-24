@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.select(:id, :username, :avatar)
+    @users = User.select(:id, :username, :avatar, :learned_kudo, :grateful_kudo, :awesome_kudo)
     render json: { users: @users }
   end
 

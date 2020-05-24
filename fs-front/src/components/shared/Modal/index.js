@@ -5,7 +5,11 @@ import "./index.css";
 
 const Modal = (props) => {
   return ReactDOM.createPortal(
-    <div className="modal_background" data-testid="modal">
+    <div
+      onClick={props.onDismiss}
+      className="modal_background"
+      data-testid="modal"
+    >
       <div className="modal_container" onClick={(e) => e.stopPropagation()}>
         {props.children}
       </div>

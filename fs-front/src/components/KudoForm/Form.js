@@ -4,9 +4,13 @@ import history from "../../history";
 
 const renderInput = (formProps) => {
   return (
-    <div>
+    <div style={{ display: "flex", flexDirection: "column" }}>
       <label> {formProps.label} </label>
-      <textarea data-testid={formProps.dataTestid} {...formProps.input} />
+      <textarea
+        style={{ resize: "none" }}
+        data-testid={formProps.dataTestid}
+        {...formProps.input}
+      />
     </div>
   );
 };
@@ -30,7 +34,9 @@ const Form = (props) => {
         label="Descrição do Kudo"
       />
 
-      <button data-testid="finishButton">Finalizar</button>
+      <button className="button right" data-testid="finishButton">
+        Enviar
+      </button>
     </form>
   );
 };

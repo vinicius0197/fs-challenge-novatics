@@ -3,8 +3,11 @@ import { connect } from "react-redux";
 
 import Modal from "../shared/Modal";
 import Form from "./Form";
+import history from "../../history";
 
 import { sendKudo } from "../../actions";
+
+import "./index.css";
 
 const KudoForm = (props) => {
   const onSubmit = (formValues) => {
@@ -18,8 +21,8 @@ const KudoForm = (props) => {
   };
 
   return (
-    <Modal modalName="kudoForm">
-      <div>Send new Kudo</div>
+    <Modal onDismiss={() => history.push("/")} modalName="kudoForm">
+      <h2 className="title">Enviar um novo kudo</h2>
       <Form onSubmit={onSubmit} />
     </Modal>
   );
