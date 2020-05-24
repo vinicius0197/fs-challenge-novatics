@@ -1,51 +1,98 @@
 .avatar_container {
   position: relative;
-  width: 50%;
+  width: 100%;
 }
 
 .avatar {
   cursor: pointer;
   display: block;
   backface-visibility: hidden;
-  transition: 0.5 ease;
+  transition: 0.3 ease;
+  width: 150px;
+  height: 150px;
 }
 
-.avatar-selected {
+.dark {
+  opacity: 0.6;
+  background-color: black;
+  z-index: 1;
+}
+
+.hidden_group {
   cursor: pointer;
-  filter: brightness(50%);
-  display: block;
-  backface-visibility: hidden;
-  transition: 0.5 ease;
-}
-
-.middle {
   display: flex;
+  color: #eeeeee;
+  width: 100%;
   flex-direction: row;
-  transition: 0.5s ease;
+  justify-content: space-between;
+  transition: 0.3s ease;
   opacity: 0;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-25%, -10%);
-  -ms-transform: translate(-25%, -10%);
+  top: 70%;
+  left: 20%;
+  transform: translate(-15%, -10%);
+  -ms-transform: translate(-15%, -10%);
   text-align: center;
 }
 
-.middle_selected {
-  display: flex;
-  flex-direction: row;
-  transition: 0.5s ease;
+.icon-group {
+  left: 23%;
+  width: 65%;
+}
+
+.text {
+  font-weight: 600;
+  font-size: 10px;
+  color: #eeeeee;
+  width: 100%;
+  transform: translate(-0%, -10%);
+  -ms-transform: translate(-0%, -10%);
+  margin: 0;
+  top: 5%;
+}
+
+.selected {
   opacity: 1;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-25%, -10%);
-  -ms-transform: translate(-25%, -10%);
-  text-align: center;
+}
+
+.username {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 50px;
+  transform: translate(-0%, -10%);
+  -ms-transform: translate(-0%, -10%);
+  color: #eeeeee;
+  top: 30%;
 }
 
 .icon {
-  height: 35px;
-  width: 35px;
+  height: 30px;
+  width: 30px;
   cursor: pointer;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }

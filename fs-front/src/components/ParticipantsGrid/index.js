@@ -3,11 +3,9 @@ import { connect } from "react-redux";
 import { Route } from "react-router-dom";
 
 import { getUsers } from "../../actions";
-
 import Avatar from "../Avatar/";
-
-import "./index.css";
 import KudoForm from "../KudoForm";
+import "./index.css";
 
 const ParticipantsGrid = (props) => {
   useEffect(() => {
@@ -18,7 +16,9 @@ const ParticipantsGrid = (props) => {
     return (
       <div className="participants_container">
         {props.users.map((user) => {
-          return <Avatar user={user} />;
+          if (props.currentUser != user.id) {
+            return <Avatar user={user} />;
+          }
         })}
       </div>
     );
@@ -26,7 +26,7 @@ const ParticipantsGrid = (props) => {
 
   return (
     <div className="container">
-      <h1>Dê um kudo!</h1>
+      <h1 className="title">Dê um kudo!</h1>
       {createGrid()}
       <Route path="/app/send_kudo" exact component={KudoForm} />
     </div>
@@ -36,6 +36,7 @@ const ParticipantsGrid = (props) => {
 const mapStateToProps = (state) => {
   return {
     users: state.usersReducer.users,
+    currentUser: state.authReducer.currentUser,
   };
 };
 

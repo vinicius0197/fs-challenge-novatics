@@ -7,6 +7,8 @@ import Login from "./Login";
 import SignUp from "./SignUp";
 import ParticipantsGrid from "./ParticipantsGrid";
 
+import "./App.css";
+
 const App = () => {
   return (
     <Router history={history}>
