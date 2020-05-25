@@ -41,7 +41,7 @@ Again, you can start the back-end and front-end servers separately by running `r
 ### Usage
 
 To use the app you need to be logged in. There are some sample accounts provided with the `seeds.rb` file, but you can also
-navigate to `localhost:3000/signup` and create an account. You will be required to inform a username, a password and a URL for your
+navigate to `localhost:3001/signup` and create an account. You will be required to inform a username, a password and a URL for your
 avatar.
 
 The main page allows you to interact with other members by sending them kudos. There are 3 types of kudos and you have 2 of each kind. Each day, your kudos will be replenished.
