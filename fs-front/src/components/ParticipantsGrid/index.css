@@ -22,6 +22,7 @@
 .participants_container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(8rem, 10rem));
+  grid-template-rows: repeat(auto-fit, minmax(8rem, 10rem));
   flex-direction: column;
   width: 100%;
   margin: auto;

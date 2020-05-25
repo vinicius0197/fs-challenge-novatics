@@ -52,6 +52,9 @@ _Meus Kudos_ allows you to read the kudos that have been sent to you.
 
 _Estatisticas_ shows a Pie Chart with information about how many kudos each member has received.
 
+**obs**: In case you drop the database while logged in, you may want to clear the cache of your browser to erase any invalid
+JWT tokens that you may have stored at `localStorage`.
+
 ### API
 
 The Rails API allows users to create and receive kudos, and it also implements a very simple authentication mechanism
