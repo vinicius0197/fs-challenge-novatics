@@ -8,6 +8,7 @@ import { ReactComponent as ClapIcon } from "../../assets/awesome.svg";
 import { ReactComponent as GratefulIcon } from "../../assets/grateful.svg";
 import "./index.css";
 
+// Displays kudos received from other users
 const MyKudos = (props) => {
   useEffect(() => {
     props.getUsers();

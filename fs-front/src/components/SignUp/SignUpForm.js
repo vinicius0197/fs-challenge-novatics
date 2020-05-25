@@ -52,7 +52,7 @@ const SignUpForm = (props) => {
         label="Link para um avatar"
       />
 
-      <button className="button" data-testid="finishButton">
+      <button className="button" data-testid="finishSignUpButton">
         Cadastrar
       </button>
     </form>

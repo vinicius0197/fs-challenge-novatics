@@ -9,6 +9,7 @@ import { ReactComponent as GratefulIcon } from "../../assets/grateful.svg";
 
 import "./index.css";
 
+// Displays all sent kudos in a timeline
 const Timeline = (props) => {
   useEffect(() => {
     props.getUsers();

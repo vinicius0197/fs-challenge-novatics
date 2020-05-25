@@ -78,3 +78,21 @@ Checks if user is authenticated.
 
 `/GET /users`
 Gets a complete list of current users.
+
+Each users starts and has 2 kudos of each kind (6 kudos total) per day. There's a cronjob that refreshes those every day, but
+case you're testing the server, you can run those any time you want by running:
+
+```
+rails runner "User.update_kudos"
+```
+
+### Tests
+
+There are basic integration tests written with Cypress. To run those, you need to enter the `/fs-front` directory and run
+the following command:
+
+```
+yarn cypress:open
+```
+
+This will open the Cypress GUI and allow you to choose which tests to run.

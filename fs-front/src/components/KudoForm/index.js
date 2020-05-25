@@ -9,6 +9,7 @@ import { sendKudo } from "../../actions";
 
 import "./index.css";
 
+// Uses a Modal to get kudo input from user
 const KudoForm = (props) => {
   const onSubmit = (formValues) => {
     const { senderId, recipientId, kudoType } = props.location.kudoData;

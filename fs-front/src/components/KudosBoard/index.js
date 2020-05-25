@@ -7,12 +7,16 @@ import { ReactComponent as GratefulIcon } from "../../assets/grateful.svg";
 
 import "./index.css";
 
+// Shows how many kudos the users still has that day
 const KudosBoard = (props) => {
   return (
     <div className="board-container">
       <div className="info-panel">
         <p className="title">Selos disponíveis</p>
-        <p className="date">Atualizado em</p>
+        <p className="date">
+          Atualizado em{" "}
+          {new Date(Date.now()).toString().split(" ").splice(0, 5).join(" ")}
+        </p>
       </div>
 
       <div className="icons-board">

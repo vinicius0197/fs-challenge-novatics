@@ -39,7 +39,7 @@ const LoginForm = (props) => {
         label="Senha"
       />
 
-      <button className="button" data-testid="finishButton">
+      <button className="button" data-testid="finishLoginButton">
         Login
       </button>
     </form>

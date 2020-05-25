@@ -10,6 +10,7 @@ import { ReactComponent as GratefulIcon } from "../../assets/grateful.svg";
 
 import "./index.css";
 
+// Renders the user avatar with the kudos icons
 const Avatar = (props) => {
   const [selected, setSelected] = useState(false);
 
@@ -66,7 +67,11 @@ const Avatar = (props) => {
           >
             <div>
               <ReactTooltip />
-              <LearnIcon data-tip="I've learned" className="icon" />
+              <LearnIcon
+                data-testid="learn-icon"
+                data-tip="I've learned"
+                className="icon"
+              />
             </div>
           </Link>
 

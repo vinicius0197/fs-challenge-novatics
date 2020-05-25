@@ -8,6 +8,7 @@ import KudoForm from "../KudoForm";
 import KudosBoard from "../KudosBoard";
 import "./index.css";
 
+// Main board. Allows users to send kudos to each others
 const ParticipantsGrid = (props) => {
   useEffect(() => {
     props.getUsers();
@@ -18,7 +19,7 @@ const ParticipantsGrid = (props) => {
     return (
       <div>
         <KudosBoard />
-        <div className="participants_container">
+        <div data-testid="participantsGrid" className="participants_container">
           {props.users.map((user) => {
             if (props.currentUser != user.id) {
               return <Avatar user={user} />;

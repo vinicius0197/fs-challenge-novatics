@@ -10,6 +10,7 @@ const defaultLabelStyle = {
   fill: "#fff",
 };
 
+// Displays a simple PieChart graph
 const Stats = (props) => {
   useEffect(() => {
     props.getUsers();
