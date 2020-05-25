@@ -35,7 +35,7 @@ const Timeline = (props) => {
 
   return (
     <div className="container">
-      <h1>Timeline</h1>
+      <h1 className="title">Timeline</h1>
       {props.users.length === 0 ? (
         <div>Vazio</div>
       ) : (

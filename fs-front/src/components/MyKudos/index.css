@@ -1,0 +1,23 @@
+.kudo-container {
+}
+
+.kudo {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  border: 1px solid #bbc6d1;
+  padding: 0.8rem;
+  margin: 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.kudo-info {
+  margin-left: 1rem;
+}
+
+.kudo-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
